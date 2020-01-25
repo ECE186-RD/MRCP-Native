@@ -1,0 +1,25 @@
+<!doctype HTML>
+<html>
+<script src="js/aframe.min.js"></script>
+<script src="js/arjs.min.js"></script>
+<script src="js/arelements.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+  <body>
+      <div id="test-panel" class="panel">
+              <h1 style="text-align: center;margin:0px">ESP32 LED</h1>
+              <hr style="width:100%;border-top: 1px solid">
+              <div id="device_status"></div>
+              <div class="section">
+                <button id="device_button" style="font-size: 48px" onclick="buttonPress();">CONNECT</button>
+              </div>
+      </div>
+    <a-scene embedded arjs='debugUIEnabled: false;detectionMode: mono_and_matrix; matrixCodeType: 4x4;' vr-mode-ui="enabled: false">
+      <a-marker emitevents="true" type='barcode' value='212'>
+          <a-entity panel class="screen" id="panel"></a-entity>
+      </a-marker>
+      <!--<a-entity id="mouseCursor" cursor="rayOrigin: mouse;mouseCursorStylesEnabled: false" raycaster="objects: .screen"></a-entity>-->
+      <a-entity id="camera" camera></a-entity>
+    </a-scene>
+    <script src="js/mrcp-device.js"></script>
+  </body>
+</html>
